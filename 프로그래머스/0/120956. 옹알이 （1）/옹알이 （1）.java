@@ -6,7 +6,7 @@ class Solution {
         for (int i = 0; i < babbling.length; i++) {
 			for (int j = 0; j < arr.length; j++) {
 				if(babbling[i].contains(arr[j])){
-					babbling[i] = babbling[i].replace(arr[j], "_");
+					babbling[i] = babbling[i].replaceFirst(arr[j], "_");
 				}
 			}
 		}
