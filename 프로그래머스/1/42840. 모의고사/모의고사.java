@@ -30,17 +30,10 @@ class Solution {
 		
 		int[] result = {result1, result2, result3};
 		int max = 0;
+		
 		for (int i = 0; i < result.length; i++) {
 			if(max < result[i]) {
 				max = result[i];
-			}
-		}
-		
-		int length = 0;
-		
-		for (int i = 0; i < result.length; i++) {
-			if(result[i] == max) {
-				length++;
 			}
 		}
 		
