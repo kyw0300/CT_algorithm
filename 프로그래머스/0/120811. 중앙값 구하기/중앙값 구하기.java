@@ -14,7 +14,7 @@ class Solution {
             }
         }
         
-        answer = array[(array.length-1)/2];
+        answer = array[array.length/2];
         return answer;
     }
 }
