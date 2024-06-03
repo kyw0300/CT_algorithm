@@ -10,14 +10,13 @@ public class Main {
 		int N = Integer.parseInt(st.nextToken());
 		int L = Integer.parseInt(st.nextToken());
 		int[] arr = new int[N];
-		int[] answer = new int[N];
 		
 		st = new StringTokenizer(br.readLine());
 		for (int i = 0; i < arr.length; i++) {
 			arr[i] = Integer.parseInt(st.nextToken());
 		}
 		
-		Deque<Node> deq = new LinkedList<>();
+		Deque<Node> deq = new ArrayDeque<>();
 		
 		for (int i = 0; i < N; i++) {
 			int num = arr[i];
