@@ -25,8 +25,7 @@ public class Main {
 		if(jarisu < n) {
 			for(int i = 1; i <= 9; i++) {
 				if(i%2 == 0) continue;
-				int nextNum = Integer.parseInt(num + "" + i);
-				dfs(nextNum, jarisu+1);
+				dfs(num*10+i, jarisu+1);
 			}
 		}
 	}
