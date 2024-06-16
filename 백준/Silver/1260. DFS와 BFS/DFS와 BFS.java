@@ -9,6 +9,7 @@ import java.util.StringTokenizer;
 
 public class Main {
 	private static ArrayList<Integer>[] D;
+	private static ArrayList<Integer>[] B;
 	private static boolean[] visited;
 	
 	private static Queue<Integer> queue;
@@ -22,10 +23,12 @@ public class Main {
 		int V = Integer.parseInt(st.nextToken());
 		
 		D = new ArrayList[N+1];
+		B = new ArrayList[N+1];
 		visited = new boolean[N+1];
 		
 		for (int i = 1; i < N+1; i++) {
 			D[i] = new ArrayList<>();
+			B[i] = new ArrayList<>();
 		}
 		
 		for (int i = 0; i < M; i++) {
@@ -35,10 +38,14 @@ public class Main {
 			
 			D[s].add(e);
 			D[e].add(s);
+			
+			B[s].add(e);
+			B[e].add(s);
 		}
 		
 		for (int i = 1; i < N+1; i++) {
 			Collections.sort(D[i]);
+			Collections.sort(B[i]);
 		}
 		
 		dfs(V);
@@ -58,7 +65,7 @@ public class Main {
 			int num = queue.poll();
 			System.out.print(num + " ");
 			
-			for(int i : D[num]){
+			for(int i : B[num]){
 				if(!visited[i]) {
 					visited[i] = true;
 					queue.add(i);
